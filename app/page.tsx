@@ -1,10 +1,18 @@
+"use client";
+
 import { Carousel } from "@/components/Carousel";
 import { FadeIn } from "@/components/FadeIn";
 import { FAQItem } from "@/components/FAQItem";
 import {
   MessageCircle,
   ShieldCheck,
-  Star
+  Star,
+  CreditCard,
+  Banknote,
+  Calendar,
+  MapPin,
+  Car,
+  Clock
 } from "lucide-react";
 
 export default function Home() {
@@ -272,42 +280,125 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4.2 Localização */}
-      <section className="py-24 px-6 bg-[var(--brand-offwhite)] border-t border-zinc-200">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-12 items-center">
-          <FadeIn delay={0.1} direction="up" className="w-full md:w-1/2">
-            <h2 className="text-3xl md:text-4xl font-semibold text-zinc-800 mb-6">Onde estamos</h2>
+      {/* 4.1.5 Investimento e Facilidades */}
+      <section className="py-24 px-6 bg-white border-t border-zinc-200">
+        <div className="max-w-5xl mx-auto text-center">
+          <FadeIn delay={0.1}>
+            <h2 className="text-3xl md:text-4xl font-semibold text-zinc-800 mb-6">Investimento e Facilidades</h2>
+            <p className="text-lg text-zinc-600 mb-12 max-w-2xl mx-auto">
+              Acreditamos que cuidar de você deve ser acessível e descomplicado. Oferecemos opções flexíveis para que você realize o seu tratamento sem preocupações.
+            </p>
+          </FadeIn>
+          
+          <FadeIn delay={0.2} direction="up">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="p-8 rounded-3xl bg-[var(--brand-offwhite)] border border-zinc-100 flex flex-col items-center text-center transition-all hover:-translate-y-1 hover:shadow-lg">
+                <CreditCard className="w-10 h-10 text-[var(--brand-rosegold)] mb-4" />
+                <h3 className="text-xl font-semibold text-zinc-800 mb-2">Cartão de Crédito</h3>
+                <p className="text-zinc-600 text-sm">Parcele seus tratamentos em até 12x com condições que cabem no seu bolso.</p>
+              </div>
+              <div className="p-8 rounded-3xl bg-[var(--brand-offwhite)] border border-zinc-100 flex flex-col items-center text-center transition-all hover:-translate-y-1 hover:shadow-lg">
+                <Banknote className="w-10 h-10 text-[var(--brand-rosegold)] mb-4" />
+                <h3 className="text-xl font-semibold text-zinc-800 mb-2">Pix ou Dinheiro</h3>
+                <p className="text-zinc-600 text-sm">Condições especiais e descontos exclusivos para pagamentos à vista no ato do atendimento.</p>
+              </div>
+              <div className="p-8 rounded-3xl bg-[var(--brand-rosegold)] text-white flex flex-col items-center text-center shadow-lg shadow-[var(--brand-rosegold)]/20 transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-[var(--brand-rosegold)]/30">
+                <Calendar className="w-10 h-10 text-white mb-4" />
+                <h3 className="text-xl font-semibold mb-2">Planos Recorrentes</h3>
+                <p className="text-white/90 text-sm">Conheça nosso clube de benefícios para manutenções preventivas de forma inteligente.</p>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* 4.2 Agendamento e Localização */}
+      <section className="py-24 px-6 bg-[var(--brand-offwhite)] border-t border-zinc-200" id="agendamento">
+        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-12">
+          
+          {/* Informações de Localização */}
+          <FadeIn delay={0.1} direction="right" className="w-full lg:w-5/12 flex flex-col justify-center">
+            <h2 className="text-3xl md:text-4xl font-semibold text-zinc-800 mb-6">Agende sua avaliação</h2>
             <p className="text-lg text-zinc-600 mb-8">
               Um ambiente projetado para o seu conforto, biossegurança e relaxamento desde o primeiro momento.
             </p>
-            <div className="space-y-4 mb-8">
-              <div className="flex items-start gap-3">
-                <div className="w-10 h-10 rounded-full bg-[var(--brand-gold)]/10 text-[var(--brand-gold-dark)] flex items-center justify-center shrink-0">
-                  <span className="font-semibold text-lg">📍</span>
+            <div className="space-y-6 mb-8">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-full bg-white shadow-sm text-[var(--brand-rosegold)] flex items-center justify-center shrink-0">
+                  <MapPin className="w-5 h-5" />
                 </div>
                 <div>
                   <h4 className="font-medium text-zinc-800">Endereço</h4>
-                  <p className="text-zinc-600">Av. Beira Mar, 1000 - Meireles, Fortaleza - CE</p>
+                  <p className="text-zinc-600">Av. Beira Mar, 1000 - Meireles<br/>Fortaleza - CE</p>
                 </div>
               </div>
-              <div className="flex items-start gap-3">
-                <div className="w-10 h-10 rounded-full bg-[var(--brand-gold)]/10 text-[var(--brand-gold-dark)] flex items-center justify-center shrink-0">
-                  <span className="font-semibold text-lg">🚗</span>
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-full bg-white shadow-sm text-[var(--brand-rosegold)] flex items-center justify-center shrink-0">
+                  <Car className="w-5 h-5" />
                 </div>
                 <div>
                   <h4 className="font-medium text-zinc-800">Estacionamento</h4>
                   <p className="text-zinc-600">Manobrista no local e estacionamento privativo gratuito.</p>
                 </div>
               </div>
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-full bg-white shadow-sm text-[var(--brand-rosegold)] flex items-center justify-center shrink-0">
+                  <Clock className="w-5 h-5" />
+                </div>
+                <div>
+                  <h4 className="font-medium text-zinc-800">Horário de Funcionamento</h4>
+                  <p className="text-zinc-600">Seg a Sex: 08h às 20h<br/>Sáb: 08h às 14h</p>
+                </div>
+              </div>
             </div>
-            <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="inline-block font-medium text-[var(--brand-rosegold)] hover:underline">
-              Como chegar &rarr;
-            </a>
+            
+            <div className="mt-auto pt-8 border-t border-zinc-200">
+               <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-[var(--brand-rosegold)] font-medium hover:text-[var(--brand-rosegold-dark)] transition-colors">
+                 <MessageCircle className="w-5 h-5" />
+                 Dúvidas urgentes? Fale no WhatsApp
+               </a>
+            </div>
           </FadeIn>
 
-          <FadeIn delay={0.2} direction="left" className="w-full md:w-1/2">
-            <div className="rounded-3xl overflow-hidden shadow-xl border border-zinc-200 h-[400px]">
-              <img src="/clinic_location.jpg" alt="Nossa clínica" className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000" />
+          {/* Formulário de Agendamento */}
+          <FadeIn delay={0.2} direction="left" className="w-full lg:w-7/12">
+            <div className="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-xl border border-zinc-100">
+              <h3 className="text-2xl font-semibold text-zinc-800 mb-2">Solicite seu Atendimento</h3>
+              <p className="text-zinc-500 mb-8">Preencha os dados abaixo e nossa equipe entrará em contato rapidamente para confirmar seu horário.</p>
+              
+              <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <label htmlFor="nome" className="text-sm font-medium text-zinc-700">Nome completo</label>
+                    <input type="text" id="nome" className="w-full px-4 py-3 rounded-xl bg-zinc-50 border border-zinc-200 focus:border-[var(--brand-rosegold)] focus:ring-2 focus:ring-[var(--brand-rosegold)]/20 outline-none transition-all" placeholder="Maria Silva" required />
+                  </div>
+                  <div className="space-y-2">
+                    <label htmlFor="telefone" className="text-sm font-medium text-zinc-700">WhatsApp</label>
+                    <input type="tel" id="telefone" className="w-full px-4 py-3 rounded-xl bg-zinc-50 border border-zinc-200 focus:border-[var(--brand-rosegold)] focus:ring-2 focus:ring-[var(--brand-rosegold)]/20 outline-none transition-all" placeholder="(00) 00000-0000" required />
+                  </div>
+                </div>
+                
+                <div className="space-y-2">
+                  <label htmlFor="interesse" className="text-sm font-medium text-zinc-700">Qual o seu principal interesse?</label>
+                  <select id="interesse" className="w-full px-4 py-3 rounded-xl bg-zinc-50 border border-zinc-200 focus:border-[var(--brand-rosegold)] focus:ring-2 focus:ring-[var(--brand-rosegold)]/20 outline-none transition-all text-zinc-700" required>
+                    <option value="">Selecione uma opção...</option>
+                    <option value="facial">Harmonização / Rejuvenescimento Facial</option>
+                    <option value="corporal">Estética Corporal / Lipo sem Cortes</option>
+                    <option value="avaliação">Apenas uma avaliação geral</option>
+                    <option value="outro">Outro</option>
+                  </select>
+                </div>
+
+                <div className="space-y-2">
+                  <label htmlFor="mensagem" className="text-sm font-medium text-zinc-700">Mensagem (opcional)</label>
+                  <textarea id="mensagem" rows={3} className="w-full px-4 py-3 rounded-xl bg-zinc-50 border border-zinc-200 focus:border-[var(--brand-rosegold)] focus:ring-2 focus:ring-[var(--brand-rosegold)]/20 outline-none transition-all resize-none" placeholder="Conte um pouco sobre o que você busca..."></textarea>
+                </div>
+
+                <button type="submit" className="w-full py-4 bg-[var(--brand-rosegold)] hover:bg-[#A5636C] text-white font-medium rounded-xl transition-all shadow-lg shadow-[var(--brand-rosegold)]/30 hover:shadow-[var(--brand-rosegold)]/50 flex items-center justify-center gap-2">
+                  Enviar solicitação de agendamento <span aria-hidden="true">&rarr;</span>
+                </button>
+                <p className="text-xs text-center text-zinc-400 mt-4">Suas informações estão seguras conosco. Em breve entraremos em contato.</p>
+              </form>
             </div>
           </FadeIn>
         </div>
