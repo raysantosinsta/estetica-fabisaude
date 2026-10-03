@@ -1,15 +1,23 @@
 @import "tailwindcss";
 
 :root {
-  --background: #FDFBF7;
-  --foreground: #27272a; /* zinc-800 */
-  --brand-offwhite: #FDFBF7;
+  /* Tipografia (da skill Tipografia) */
+  --font-title: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Jost', system-ui, sans-serif;
+  --section-space: clamp(5rem, 10vw, 7.5rem);
+
+  /* Variáveis de Cores Antigas Preservadas mas Melhoradas (da skill Cores/UX) */
+  --background: #FAF6F2;
+  --foreground: #3A3330;
+  
+  --brand-offwhite: #FAF6F2;
   --brand-rosegold: #B76E79;
   --brand-rosegold-dark: #9A5C66;
-  --brand-gold: #D4AF37;
-  --brand-gold-dark: #B8962E;
-  --brand-accent-1: #E8DCC4;
-  --brand-accent-2: #DDBEA9;
+  --brand-gold: #C9A27E;
+  --brand-gold-dark: #A88258;
+  
+  --brand-accent-1: #EADBD0;
+  --brand-accent-2: #E5DDD5;
 }
 
 @theme inline {
@@ -22,14 +30,84 @@
   --color-brand-gold-dark: var(--brand-gold-dark);
   --color-brand-accent-1: var(--brand-accent-1);
   --color-brand-accent-2: var(--brand-accent-2);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-title: var(--font-title);
+  --font-body: var(--font-body);
 }
 
 body {
-  background: var(--background);
+  font-family: var(--font-body);
+  font-size: clamp(16px, 1.1vw + 12px, 18px);
+  line-height: 1.7;
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--background);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+h1, h2, h3 {
+  font-family: var(--font-title);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  color: var(--foreground);
+}
+
+h1 { font-size: clamp(2.6rem, 6vw, 4.8rem); }
+h2 { font-size: clamp(2rem, 4vw, 3.2rem); }
+h3 { font-size: clamp(1.4rem, 2.2vw, 1.8rem); }
+
+h1 em, h2 em { font-style: italic; font-weight: 500; color: var(--brand-gold); }
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brand-gold);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+/* Primary Action CTA (Botão Premium - Skill Cores/UX) */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2.5rem;
+  background-color: var(--brand-rosegold);
+  color: #FFFFFF !important;
+  border-radius: 9999px;
+  font-weight: 500;
+  font-family: var(--font-body);
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(183, 110, 121, 0.2);
+}
+.btn:hover {
+  background-color: var(--brand-rosegold-dark);
+  box-shadow: 0 15px 40px rgba(183, 110, 121, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Secondary Action (Botão outline/transparente) */
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2.5rem;
+  background: transparent;
+  color: var(--brand-rosegold) !important;
+  border: 1px solid var(--brand-rosegold);
+  border-radius: 9999px;
+  font-weight: 500;
+  font-family: var(--font-body);
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+}
+.btn-outline:hover {
+  background: var(--brand-rosegold);
+  color: #FFFFFF !important;
+}
+
+section { padding-block: var(--section-space); }
